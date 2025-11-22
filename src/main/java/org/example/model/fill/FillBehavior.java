@@ -10,4 +10,9 @@ public interface FillBehavior {
     void setColor(Color c);
 
     void setShape(RectangularShape s);
+
+    Color color();
+
+    RectangularShape shape();
+    FillBehavior clone();
 }

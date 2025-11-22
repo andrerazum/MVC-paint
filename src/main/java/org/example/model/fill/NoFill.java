@@ -24,9 +24,25 @@ public class NoFill implements FillBehavior {
         g.draw(shape);
         g.setPaint(paint);
     }
-
+    public Color color() {
+        return color;
+    }
     @Override
     public void setShape(RectangularShape s) {
         shape = s;
+    }
+
+
+    @Override
+    public RectangularShape shape() {
+        return shape;
+    }
+
+    @Override
+    public FillBehavior clone() {
+        NoFill nofill = new NoFill();
+        nofill.setColor(color);
+        nofill.shape = (RectangularShape) shape.clone();
+        return nofill;
     }
 }
